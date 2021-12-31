@@ -1,0 +1,66 @@
+.message {
+  display: flex;
+  flex-direction: column;
+}
+
+.messageTop {
+  display: flex;
+}
+.messageImg {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.messageText {
+  padding: 9px;
+
+  max-width: 300px;
+  border-radius: 10px;
+  background-color: rgb(53, 107, 114);
+  color: antiquewhite;
+}
+
+.messageBottom {
+  font-size: 10px;
+}
+
+.message.own {
+  align-items: flex-end;
+}
+
+.message.own .messageText {
+  background-color: rgb(10, 10, 10);
+  color: white;
+}
+
+/* chatOnlineCss */
+.chatOnlineFriend {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 4px;
+}
+.chatOnlineImgContainer {
+  position: relative;
+  margin-right: 9px;
+}
+
+.chatOnlineImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chatOnlineBadge {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: turquoise;
+  top: 0px;
+}

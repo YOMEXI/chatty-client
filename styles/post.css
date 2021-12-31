@@ -1,0 +1,132 @@
+.removeA {
+  text-decoration: none !important;
+  list-style: none !important;
+  color: black !important;
+}
+.post {
+  width: 100%;
+  border-radius: 11px;
+  margin: 30px 0;
+  background-color: rgb(206, 205, 198);
+}
+.postWrapper {
+  padding: 9px;
+}
+
+.Category {
+  display: flex !important;
+  width: 100%;
+}
+.leftSide {
+  flex: 1;
+}
+.mainSide {
+  flex: 6;
+}
+.rightSide {
+  flex: 3;
+}
+
+.postTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.postTopLeft {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.postProfileImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.postUsername {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 10px;
+}
+
+.postTitle {
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
+  font-weight: 800;
+  width: auto;
+  margin-top: 12px;
+}
+
+.postDate {
+  font-size: 14px;
+}
+
+.postCenter {
+  margin: 20px 0;
+}
+
+.postImg {
+  margin-top: 15px;
+  width: 100% !important;
+  max-height: 400px;
+  object-fit: contain !important;
+}
+
+.postBottom {
+  display: flex;
+  align-items: center !important;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+.postBottomLeft {
+  display: flex;
+  align-items: center;
+}
+.postBottomRight {
+  display: flex;
+  align-items: center;
+  font-weight: none !important;
+  font-size: 13px;
+  justify-content: space-evenly;
+}
+
+.like {
+  cursor: pointer;
+  margin-right: 10px;
+}
+.comment {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.postText {
+  align-items: center;
+  justify-content: center;
+  display: flex !important;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+@media screen and (max-device-width: 700px) {
+  .postImg {
+    margin-top: 10px;
+    width: 100% !important;
+    max-height: 150px;
+    object-fit: contain !important;
+  }
+
+  .postText {
+    align-items: center;
+    justify-content: center;
+    display: flex !important;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}

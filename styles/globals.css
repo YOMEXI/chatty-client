@@ -1,0 +1,74 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.error {
+  color: red !important;
+}
+
+.noticeColor {
+  color: #d63e18 !important;
+}
+
+/* button */
+
+#search {
+  transition: all 0.5s;
+  padding: 0.3rem;
+  align-items: center !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  background: rgb(247, 247, 247);
+  position: relative;
+}
+
+#search button,
+#search input {
+  appearance: none;
+  background: transparent;
+  border: 0 !important;
+  color: inherit;
+  outline: inherit;
+}
+
+#search button {
+  cursor: pointer !important;
+  padding: 0 0.2rem;
+}
+
+/* posts */
+
+.postBgImg {
+  background: url("/img/blue3.jpg") no-repeat center center/cover;
+}
+
+.pointer {
+  cursor: pointer !important;
+}
+
+.userLiked {
+  color: rgb(26, 116, 122) !important;
+}
+
+/* passwordupdateform */
+.passwordForm {
+  outline: transparent !important;
+  border: 0 !important;
+  border-color: white !important;
+  border-radius: 25px !important;
+  width: 100%;
+}
