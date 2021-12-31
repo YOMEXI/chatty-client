@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const auth = () => {
   if (typeof window !== "undefined" && localStorage.getItem("user")) {
-    return JSON.parse(localStorage.getItem("user"));
+    return JSON.parse(localStorage.getItem("user") || "{}");
   } else {
     return null;
   }
@@ -41,7 +41,7 @@ const authSlice = createSlice({
     loginSuccess: (state, action) => {
       state.loading = false;
       state.success = action.payload.message;
-      state.user = JSON.parse(localStorage.getItem("user"));
+      state.user = JSON.parse(localStorage.getItem("user") || "{}");
     },
   },
 });
