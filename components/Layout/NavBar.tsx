@@ -39,7 +39,6 @@ const NavBar = () => {
 
           <div
             className="offcanvas offcanvas-end"
-            tabIndex="-1"
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
           >
