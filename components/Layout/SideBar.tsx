@@ -10,9 +10,9 @@ const SideBar = () => {
   const { user } = auth;
 
   return (
-    <>
+    <div>
       <li className="nav-item">
-        <a className="nav-link active" aria-current="page" href="/">
+        <a className="nav-link text-dark " aria-current="page" href="/">
           Home
         </a>
       </li>
@@ -20,12 +20,12 @@ const SideBar = () => {
         <>
           {" "}
           <li className="nav-item">
-            <a className="nav-link" href="/auth/login">
+            <a className="nav-link text-dark" href="/auth/login">
               Login
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/auth/register">
+            <a className="nav-link text-dark" href="/auth/register">
               Register
             </a>
           </li>
@@ -34,19 +34,19 @@ const SideBar = () => {
       {user && (
         <>
           <li className="nav-item">
-            <a className="nav-link" href="/chat/msg">
+            <a className="nav-link text-dark" href="/chat/msg">
               Messages <i className=" ms-2 fas fa-envelope-open fa-lg "></i>
             </a>
           </li>
 
           <li className="nav-item">
-            <a className="nav-link " href="/auth/profile ">
+            <a className="nav-link text-dark" href="/auth/profile ">
               My Account <i className="ms-2 fas fa-user fa-lg"></i>
             </a>
           </li>
           <li className="nav-item">
             <a
-              className="nav-link"
+              className="nav-link text-dark"
               onClick={logout}
               style={{ cursor: "pointer" }}
             >
@@ -55,7 +55,7 @@ const SideBar = () => {
           </li>
         </>
       )}
-    </>
+    </div>
   );
 };
 

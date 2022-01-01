@@ -31,13 +31,13 @@ const Post = ({ post, deletePost, error, Like, loading, likePost }: any) => {
             <div className="postWrapper">
               <div className="postTop">
                 <div className="postTopLeft">
-                  {/* <img
+                  <img
                     src={
                       post.user.imgUrl ? post.user.imgUrl : `/img/person.png`
                     }
                     alt=""
                     className="postProfileImg"
-                  /> */}
+                  />
 
                   <span className="postUsername">
                     <a className="removeA" href={`/auth/${post.user.username}`}>
@@ -60,11 +60,11 @@ const Post = ({ post, deletePost, error, Like, loading, likePost }: any) => {
                     {post?.text}
                   </a>
                 </span>
-                {/* <img
+                <img
                   src={post?.picUrl ? post?.picUrl : ""}
                   alt=""
                   className="postImg"
-                /> */}
+                />
               </div>
 
               <div className="postBottom">

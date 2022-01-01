@@ -1,11 +1,9 @@
 import axios from "axios";
 import { useRouter } from "next/router";
-import useSWR from "swr";
 import { ToastFailure } from "./alert";
 
 //
-axios.defaults.baseURL = process.env.NEXT_PUBLIC_API;
-axios.defaults.withCredentials = true;
+
 axios.interceptors.response.use(
   (res) => {
     return res;

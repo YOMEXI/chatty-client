@@ -24,7 +24,9 @@ export const login = (value: any, router: any) => async (dispatch: any) => {
   try {
     dispatch(pending());
 
-    const { data } = await axios.post("/api/login", value);
+    const { data } = await axios.post("/api/login", value, {
+      withCredentials: true,
+    });
 
     window.localStorage.setItem("user", JSON.stringify(data));
 

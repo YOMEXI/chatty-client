@@ -33,8 +33,8 @@ const SinglePost = () => {
   const Like = (post: any) => {
     return post.map(
       (p: any) =>
-        p.likes.filter(
-          (p: any) => p.user.toString() === user.user._id.toString()
+        p?.likes.filter(
+          (p: any) => p?.user?.toString() === user?.user?._id.toString()
         ).length
     );
   };
