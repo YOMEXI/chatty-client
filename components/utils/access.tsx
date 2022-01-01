@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import useSWR from "swr";
+import { ToastFailure } from "./alert";
 
 axios.interceptors.response.use(
   (res) => {
@@ -34,9 +35,12 @@ const pageAuth = async () => {
   if (!checkPage) {
     try {
       const { data } = await axios.get(`/api/user/me`);
-      return <></>;
+      if (data) {
+        return;
+      }
     } catch (error: any) {
       if (error && error.status === 401) {
+        ToastFailure(error.data.message);
         localStorage.removeItem("user");
         router.push("/");
       }
