@@ -31,7 +31,7 @@ export const login = (value: any, router: any) => async (dispatch: any) => {
     dispatch(loginSuccess(data));
     setTimeout(() => {
       router.push("/");
-    }, 3000);
+    }, 10000);
   } catch (error: any) {
     dispatch(loginFail(error.data));
   }
