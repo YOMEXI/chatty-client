@@ -16,6 +16,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { SWRConfig } from "swr";
 import { useRouter } from "next/router";
 import { pageAuth } from "../components/utils/access";
+import Footer from "../components/Layout/Footer";
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_API;
 axios.defaults.withCredentials = true;
@@ -53,6 +54,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           />
           <Navbar />
           <Component {...pageProps} />;
+          <Footer />
         </Provider>
       </SWRConfig>
     </>
