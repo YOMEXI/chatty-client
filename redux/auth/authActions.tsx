@@ -26,6 +26,7 @@ export const login = (value: any, router: any) => async (dispatch: any) => {
 
     const { data } = await axios.post("/api/login", value, {
       withCredentials: true,
+      headers: { crossDomain: true, "Content-Type": "application/json" },
     });
 
     window.localStorage.setItem("user", JSON.stringify(data));
