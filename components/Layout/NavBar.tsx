@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import Search from "./Search";
 import SideBar from "./SideBar";
 
-const NavBar = () => {
+export const NavBar = () => {
   // const auth = useSelector((state: any) => state.auth);
 
   // const { user } = auth;

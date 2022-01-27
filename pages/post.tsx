@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Image } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
 const Post = ({ post, deletePost, error, Like, loading, likePost }: any) => {
@@ -54,17 +54,21 @@ const Post = ({ post, deletePost, error, Like, loading, likePost }: any) => {
               <div className="postTopCenter">
                 <span className="postTitle">{post.title}</span>
               </div>
+              {post?.picUrl && (
+                <Image
+                  src={post?.picUrl ? post?.picUrl : ""}
+                  alt=""
+                  className="postImg"
+                  height={150}
+                  width={150}
+                />
+              )}
               <div className="postCenter">
                 <span className="postText">
                   <a className="removeA" href={`/chat/posts/${post._id}`}>
                     {post?.text}
                   </a>
                 </span>
-                <img
-                  src={post?.picUrl ? post?.picUrl : ""}
-                  alt=""
-                  className="postImg"
-                />
               </div>
 
               <div className="postBottom">

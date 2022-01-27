@@ -17,6 +17,7 @@ import { SWRConfig } from "swr";
 import { useRouter } from "next/router";
 import { pageAuth } from "../components/utils/access";
 import Footer from "../components/Layout/Footer";
+import Layout from "../components/Layout/Layout";
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_API;
 axios.defaults.withCredentials = true;
@@ -52,9 +53,9 @@ function MyApp({ Component, pageProps }: AppProps) {
             draggable
             pauseOnHover
           />
-          <Navbar />
-          <Component {...pageProps} />;
-          <Footer />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </Provider>
       </SWRConfig>
     </>

@@ -1,8 +1,8 @@
 import React from "react";
 
-const Footer = () => {
+export const Footer = () => {
   return (
-    <div className="mt-3">
+    <div className="foot">
       <footer className="footer">
         <p>Copyright &copy; 2022 , Chatty</p>
       </footer>

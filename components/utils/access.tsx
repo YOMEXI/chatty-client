@@ -45,9 +45,6 @@ const pageAuth = async () => {
         localStorage.removeItem("user");
         router.push("/");
       }
-      // console.log(error);
-      // console.log(error.status);
-      // console.log(error.headers);
     }
   }
 };
