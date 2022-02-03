@@ -1,13 +1,14 @@
 .removeA {
   text-decoration: none !important;
   list-style: none !important;
-  color: black !important;
+  color: white;
 }
 .post {
   width: 100%;
   border-radius: 11px;
   margin: 30px 0;
-  background-color: rgb(209, 231, 7);
+  background-color: rgba(19, 18, 18, 0.8);
+  color: white;
 }
 .postWrapper {
   padding: 9px;
@@ -41,6 +42,9 @@
   align-items: center;
   justify-content: space-between;
 }
+.singlepost {
+  margin-top: 4rem;
+}
 .topCenterText {
   width: 100%;
 }
@@ -48,6 +52,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .postTopLeft {
   display: flex;
@@ -75,6 +80,7 @@
   font-weight: 800;
   width: auto;
   margin-top: 12px;
+  color: white;
 }
 
 .postDate {
@@ -101,13 +107,13 @@
 .postBottomLeft {
   display: flex;
   align-items: center;
+  font-size: 1.5rem;
 }
 .postBottomRight {
   display: flex;
   align-items: center;
-  font-weight: none !important;
-  font-size: 13px;
   justify-content: space-evenly;
+  font-size: 1.5rem;
 }
 
 .like {
@@ -132,6 +138,19 @@
 }
 
 @media screen and (max-device-width: 700px) {
+  .postBottomLeft {
+    font-size: 1.1rem;
+  }
+  .postBottomRight {
+    font-size: 1.1rem;
+  }
+
+  .homepage {
+    margin-top: 4.5rem;
+  }
+  .singlepost {
+    margin-top: 4.5rem;
+  }
   .postImg {
     margin-top: 10px;
     width: 100% !important;

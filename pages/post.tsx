@@ -67,15 +67,17 @@ const Post = ({ post, deletePost, error, Like, loading, likePost }: any) => {
                     </span>
                   </div>
                 </div>
-                {post?.picUrl && (
-                  <Image
-                    src={post?.picUrl ? post?.picUrl : ""}
-                    alt=""
-                    className="postImg"
-                    height={150}
-                    width={150}
-                  />
-                )}
+                <div>
+                  {post?.picUrl && (
+                    <Image
+                      src={post?.picUrl ? post?.picUrl : ""}
+                      alt=""
+                      className="postImg"
+                      height={150}
+                      width={150}
+                    />
+                  )}
+                </div>
               </div>
 
               <div className="postBottom">
@@ -83,28 +85,28 @@ const Post = ({ post, deletePost, error, Like, loading, likePost }: any) => {
                   {user && Number(Like) > 0 && (
                     <i
                       onClick={() => likePost(post._id)}
-                      className="fas fa-thumbs-up fa-lg like userLiked"
+                      className="fas fa-thumbs-up fa-lg mx-1  userLiked"
                     ></i>
                   )}
                   {user && Number(Like) === 0 && (
                     <i
                       onClick={() => likePost(post._id)}
-                      className="fas fa-thumbs-up fa-lg like "
+                      className="fas fa-thumbs-up fa-lg me-2 "
                     ></i>
                   )}
                   <span>{post.likes.length} Likes</span>
                 </div>
 
                 <div className="postBottomRight">
-                  <i className="fas fa-comment fa-lg comment">
-                    {" "}
-                    {post.comments.length} Comments
-                  </i>
-                  <i
-                    onClick={() => deletePost()}
-                    style={{ color: "red" }}
-                    className="fas fa-trash fa-lg cursor "
-                  ></i>
+                  <i className="fas fa-comment fa-lg  mx-1"> </i>
+                  {post.comments.length} Comments
+                  {router.pathname !== "/" && (
+                    <i
+                      onClick={() => deletePost()}
+                      style={{ color: "red" }}
+                      className="fas fa-trash fa-lg cursor "
+                    ></i>
+                  )}
                 </div>
               </div>
             </div>
