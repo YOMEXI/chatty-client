@@ -65,53 +65,34 @@ export const profile: React.FC<PROFILE> = () => {
 
   return (
     <>
-      <FollowTab profile={profile} />
+      <div className="mt-4">
+        <FollowTab profile={profile} />
+      </div>
 
-      {profile && (
-        <Container>
-          <Row className="mt-4">
-            <Col
-              lg={5}
-              sm={10}
-              xs={10}
-              md={9}
-              className=" d-flex justify-content-center "
-            >
-              <Card style={{ width: "100%" }}>
-                <Card.Img
-                  variant="top"
-                  src={
-                    profile?.UserProfile?.imgUrl
-                      ? profile?.UserProfile?.imgUrl
-                      : "/img/person.png"
-                  }
-                />
-                <Card.Body>
-                  <Card.Title>User Profile</Card.Title>
+      <div className="profile-card">
+        {profile && (
+          <>
+            <div className="image-container">
+              <img
+                src={
+                  profile?.UserProfile?.imgUrl
+                    ? profile?.UserProfile?.imgUrl
+                    : "/img/person.png"
+                }
+                alt=""
+                className="imgs"
+              />
+              <div className="form">
+                <Form onSubmit={imgUpload}>
+                  <Form.Group controlId="formFileSm" className="my-3">
+                    <Form.Label>Profile pic upload</Form.Label>
+                    <Form.Control
+                      type="file"
+                      size="sm"
+                      disabled={!user}
+                      onChange={handleChange("image")}
+                    />
 
-                  <Card.Text>
-                    Firstname : <span>{profile?.UserProfile?.firstname}</span>
-                  </Card.Text>
-                  <Card.Text>
-                    Lastname : <span>{profile?.UserProfile?.lastname}</span>
-                  </Card.Text>
-                  <Card.Text>
-                    Username : <span>{profile?.UserProfile?.username}</span>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col lg={6} sm={10} xs={10} md={9}>
-              <Form onSubmit={imgUpload}>
-                <Form.Group controlId="formFileSm" className="my-3">
-                  <Form.Label>Profile pic upload</Form.Label>
-                  <Form.Control
-                    type="file"
-                    size="sm"
-                    disabled={!user}
-                    onChange={handleChange("image")}
-                  />
-                  {!loading ? (
                     <Button
                       type="submit"
                       size="sm"
@@ -119,27 +100,36 @@ export const profile: React.FC<PROFILE> = () => {
                       className="mt-1"
                       variant="primary"
                     >
-                      Submit
+                      {loading ? "Submitting" : "Submit"}
                     </Button>
-                  ) : (
-                    <Button variant="secondary" disabled>
-                      <Spinner
-                        as="span"
-                        animation="grow"
-                        size="sm"
-                        role="status"
-                        aria-hidden="true"
-                        variant="dark"
-                      />
-                      Submitting
-                    </Button>
-                  )}
-                </Form.Group>
-              </Form>
-            </Col>
-          </Row>
-        </Container>
-      )}
+                  </Form.Group>
+                </Form>
+              </div>
+            </div>
+            <div className="main-container">
+              <div className="profile-details">
+                <h4>
+                  <i className="fas fa-info"> </i>
+                  <span>User Info</span>
+                </h4>
+                <p className="details">
+                  firstname: <i className="fas fa-dice-d20"></i>{" "}
+                  {profile?.UserProfile?.firstname}
+                </p>
+                <p className="details">
+                  lastname: <i className="fas fa-dice-d20"></i>{" "}
+                  {profile?.UserProfile?.lastname}
+                </p>
+                <p className="details">
+                  username: <i className="fas fa-dice-d20"></i>{" "}
+                  {profile?.UserProfile?.username}
+                </p>
+                <hr />
+              </div>
+            </div>
+          </>
+        )}
+      </div>
     </>
   );
 };

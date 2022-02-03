@@ -26,6 +26,7 @@ const pageAuth = async () => {
     "/auth/login",
     "/auth/register",
     "/auth/[username]",
+    "/chat/posts/[singlepost]",
   ];
 
   let checkPage =

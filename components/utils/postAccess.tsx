@@ -5,8 +5,9 @@ import { ToastFailure } from "./alert";
 export const likePost = async (id: any, post: any, user: any) => {
   let postID = post.map(
     (p: any) =>
-      p.likes.filter((p: any) => p.user.toString() === user.user._id.toString())
-        .length
+      p?.likes?.filter(
+        (p: any) => p?.user?.toString() === user.user._id.toString()
+      ).length
   );
 
   return await mutate(`/api/posts/${id}`, async () => {

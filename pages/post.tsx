@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Col, Container, Row, Image } from "react-bootstrap";
+import { Col, Container, Row, Image, Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
 const Post = ({ post, deletePost, error, Like, loading, likePost }: any) => {
@@ -14,12 +14,17 @@ const Post = ({ post, deletePost, error, Like, loading, likePost }: any) => {
 
   return (
     <>
-      <div className="topsy">
-        {router.pathname === "/" && <div className="lp">Latest Posts</div>}
+      <div className="homepage d-flex justify-content-between">
+        {post && router.pathname === "/" && (
+          <Button variant="primary">Latest Posts</Button>
+        )}
         {user?.user && (
-          <div className="cp">
+          <div>
             <Link href="/chat/posts/createpost">
-              <a className="linky"> Create Posts</a>
+              <a className="linky">
+                {" "}
+                <Button variant="primary">Create Post</Button>
+              </a>
             </Link>
           </div>
         )}
@@ -52,23 +57,25 @@ const Post = ({ post, deletePost, error, Like, loading, likePost }: any) => {
                 </div>
               </div>
               <div className="postTopCenter">
-                <span className="postTitle">{post.title}</span>
-              </div>
-              {post?.picUrl && (
-                <Image
-                  src={post?.picUrl ? post?.picUrl : ""}
-                  alt=""
-                  className="postImg"
-                  height={150}
-                  width={150}
-                />
-              )}
-              <div className="postCenter">
-                <span className="postText">
-                  <a className="removeA" href={`/chat/posts/${post._id}`}>
-                    {post?.text}
-                  </a>
-                </span>
+                <div className="topCenterText">
+                  <span className="postTitle">{post.title}</span>
+                  <div className="postCenter">
+                    <span className="postText">
+                      <a className="removeA" href={`/chat/posts/${post._id}`}>
+                        {post?.text}
+                      </a>
+                    </span>
+                  </div>
+                </div>
+                {post?.picUrl && (
+                  <Image
+                    src={post?.picUrl ? post?.picUrl : ""}
+                    alt=""
+                    className="postImg"
+                    height={150}
+                    width={150}
+                  />
+                )}
               </div>
 
               <div className="postBottom">

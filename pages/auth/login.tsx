@@ -70,8 +70,8 @@ const Login = () => {
                         setshowPassword={setshowPassword}
                       />
                     </>
-                    <Row className="justify-content-center">
-                      <Col lg={5} md={8} sm={4} xs={5}>
+                    <Row className="d-flex justify-content-center">
+                      <Col lg={5} md={8} sm={4} xs={5} className="d-flex">
                         {!loading ? (
                           <Button
                             type="submit"

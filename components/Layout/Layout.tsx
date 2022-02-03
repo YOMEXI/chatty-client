@@ -4,15 +4,14 @@ import NavBar from "./NavBar";
 export default function Layout({ children }: any) {
   return (
     <>
-      <div className="navvy">
-        {" "}
+      <header>
         <NavBar />
-      </div>
-      <main className="section">{children}</main>
-      <div className="footy">
-        {" "}
+      </header>
+      <main>{children}</main>
+
+      <footer>
         <Footer />
-      </div>
+      </footer>
     </>
   );
 }

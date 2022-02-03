@@ -52,7 +52,7 @@ const SinglePost = () => {
   if (!post) {
     return (
       <Container>
-        <Col className="justify-content-center  text-center mt-2 fs-5">
+        <Col className="justify-content-center mt-5 text-center mt-2 fs-5">
           {!post && "No Post Found"}
         </Col>
       </Container>

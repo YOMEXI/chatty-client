@@ -17,7 +17,7 @@ export const NavBar = () => {
         <div className="container">
           <div className="mx-2">
             <a className=" text-white " style={{ fontSize: "1.1rem" }} href="/">
-              Chatty
+              <i className="fas chatty fa-comment-dots fa-2x"></i>
             </a>
           </div>
           <div className="d-flex">

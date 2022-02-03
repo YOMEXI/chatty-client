@@ -62,70 +62,93 @@ const profile = () => {
     <>
       {profile ? (
         <>
-          <FollowTab profile={profile} />
-          <Container>
+          <div className="mt-4">
+            <FollowTab profile={profile} />
+          </div>
+
+          <div className="profile-card">
+            {profile && (
+              <>
+                <div className="image-container">
+                  <img
+                    src={
+                      profile?.UserProfile?.imgUrl
+                        ? profile?.UserProfile?.imgUrl
+                        : "/img/person.png"
+                    }
+                    alt=""
+                    className="imgs"
+                  />
+                </div>
+                <div className="main-container">
+                  <div className="profile-details">
+                    <h4>
+                      <i className="fas fa-info"> </i>
+                      <span>User Info</span>
+                    </h4>
+                    <p className="details">
+                      firstname: <i className="fas fa-dice-d20"></i>{" "}
+                      {profile?.UserProfile?.firstname}
+                    </p>
+                    <p className="details">
+                      lastname: <i className="fas fa-dice-d20"></i>{" "}
+                      {profile?.UserProfile?.lastname}
+                    </p>
+                    <p className="details">
+                      username: <i className="fas fa-dice-d20"></i>{" "}
+                      {profile?.UserProfile?.username}
+                    </p>
+                    <hr />
+                    <div>
+                      {isFollowing === 0 && (
+                        <Button
+                          variant="danger"
+                          onClick={() =>
+                            followUser(
+                              profile?.UserProfile._id,
+                              profile?.UserProfile._id,
+                              profile?.UserProfile.username,
+                              user
+                            )
+                          }
+                        >
+                          Follow
+                        </Button>
+                      )}
+                      {isFollowing > 0 && (
+                        <Button
+                          variant="secondary"
+                          onClick={() =>
+                            unFollowUser(
+                              profile?.UserProfile._id,
+                              profile?.UserProfile._id,
+                              profile?.UserProfile.username
+                            )
+                          }
+                        >
+                          Unfollow
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
+
+          {/* <Container>
             <Row className="d-flex">
               <Col lg={4} md={7} sm={10} xs={10}>
-                <Card className=" text-white mt-5" bg="dark">
-                  <Card.Img variant="top" />
-
-                  {profile?.UserProfile.imgUrl && (
-                    <Card.Img src={profile?.UserProfile.imgUrl} />
-                  )}
-                  {!profile?.UserProfile.imgUrl && (
-                    <Card.Img src={`/img/person.png`} />
-                  )}
-                  <Card.Body className="d-block">
-                    <Card.Title>User Info</Card.Title>
-                    <Card.Text>
-                      Firstname: {profile?.UserProfile.firstname}
-                    </Card.Text>
-                    <Card.Text>
-                      {" "}
-                      Lastname: {profile?.UserProfile.lastname}
-                    </Card.Text>
-                    <Card.Text> Age: {profile?.UserProfile.age}</Card.Text>
-                    <Col className="d-flex justify-content-between">
+                
                       <Card.Text>
-                        Username: {profile?.UserProfile.username}
-                      </Card.Text>
-                      <Card.Text>
-                        {isFollowing === 0 && (
-                          <Button
-                            variant="danger"
-                            onClick={() =>
-                              followUser(
-                                profile?.UserProfile._id,
-                                profile?.UserProfile._id,
-                                profile?.UserProfile.username,
-                                user
-                              )
-                            }
-                          >
-                            Follow
-                          </Button>
-                        )}
-                        {isFollowing > 0 && (
-                          <Button
-                            variant="secondary"
-                            onClick={() =>
-                              unFollowUser(
-                                profile?.UserProfile._id,
-                                profile?.UserProfile._id,
-                                profile?.UserProfile.username
-                              )
-                            }
-                          >
-                            Unfollow
-                          </Button>
-                        )}
+                        
                       </Card.Text>
                     </Col>
                   </Card.Body>
                 </Card>
               </Col>
             </Row>
-          </Container>
+          </Container> */}
         </>
       ) : (
         <Row>

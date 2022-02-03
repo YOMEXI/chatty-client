@@ -59,11 +59,11 @@ const ChatOnline = ({ setCurrentChat, currentId, socketUsers }: any) => {
               onClick={() => handleClick(o)}
             >
               <div className="chatOnlineImgContainer">
-                <img
+                {/* <img
                   src={o?.user?.imgUrl ? o?.user?.imgUrl : "/img/preety.jpg"}
                   alt=""
                   className="chatOnlineImg"
-                />
+                /> */}
                 <div className={isOnline && "chatOnlineBadge"}></div>
               </div>
               <span className="chatOnlineName">{o?.user?.username}</span>

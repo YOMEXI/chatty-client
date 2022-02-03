@@ -8,6 +8,7 @@ import Conversation from "../../components/Message/conversation";
 import Message from "../../components/Message/Message";
 import { ToastFailure, ToastSuccess } from "../../components/utils/alert";
 import { getConversation, getMessage } from "../../components/utils/UserInfo";
+import { Button } from "react-bootstrap";
 
 const msg = () => {
   const [conversations, setConversations] = useState([]);
@@ -107,22 +108,6 @@ const msg = () => {
 
   return (
     <div className="messenger">
-      <div className="chatMenu">
-        <div className="chatMenuWrapper">
-          {/* <input placeholder="search for friends" className="chatSearchInput" />
-          {conversations &&
-            conversations.map((conversation: any, i: any) => {
-              return (
-                <div onClick={() => setCurrentChat(conversation)} key={i}>
-                  <Conversation
-                    conversation={conversation}
-                    currentUser={user?.user}
-                  />
-                </div>
-              );
-            })} */}
-        </div>
-      </div>
       <div className="chatBox">
         <div className="chatBoxWrapper">
           {currentChat || currentChat === null ? (
@@ -149,9 +134,13 @@ const msg = () => {
                   value={newMessage}
                   onChange={(e: any) => setNewMessage(e.target.value)}
                 ></textarea>
-                <button className="chatSubmitButton" onClick={handleSubmit}>
+                <Button
+                  className="mt-2 "
+                  variant="primary"
+                  onClick={handleSubmit}
+                >
                   Send
-                </button>
+                </Button>
               </div>
             </>
           ) : (
