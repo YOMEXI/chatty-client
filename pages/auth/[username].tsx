@@ -62,7 +62,7 @@ const profile = () => {
     <>
       {profile ? (
         <>
-          <div className="mt-4">
+          <div className="followTab">
             <FollowTab profile={profile} />
           </div>
 
@@ -99,7 +99,7 @@ const profile = () => {
                       {profile?.UserProfile?.username}
                     </p>
                     <hr />
-                    <div>
+                    <div className="mx-2">
                       {isFollowing === 0 && (
                         <Button
                           variant="danger"
@@ -135,20 +135,6 @@ const profile = () => {
               </>
             )}
           </div>
-
-          {/* <Container>
-            <Row className="d-flex">
-              <Col lg={4} md={7} sm={10} xs={10}>
-                
-                      <Card.Text>
-                        
-                      </Card.Text>
-                    </Col>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </Row>
-          </Container> */}
         </>
       ) : (
         <Row>

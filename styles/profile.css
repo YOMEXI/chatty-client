@@ -10,6 +10,10 @@
   padding: 1rem;
 }
 
+.followTab {
+  margin-top: 3rem;
+}
+
 .image-container img {
   width: 70%;
   object-fit: contain;
@@ -63,5 +67,35 @@
   }
   .main-container .profile-details h4 {
     font-size: 1.5rem;
+  }
+  .followTab {
+    margin-top: 4rem;
+  }
+}
+
+@media screen and (max-device-width: 500px) {
+  .image-container img {
+    width: 80vw;
+    height: 17rem;
+  }
+
+  .followTab {
+    margin-top: 6rem;
+  }
+
+  .followTab {
+    margin-bottom: -3rem;
+  }
+  .profile-card {
+    gap: 0rem;
+  }
+
+  .main-container {
+    height: 10rem;
+  }
+
+  .main-container .profile-details {
+    width: 90vw;
+    display: block;
   }
 }

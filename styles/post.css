@@ -3,6 +3,11 @@
   list-style: none !important;
   color: white;
 }
+
+.removeA:hover {
+  color: white;
+}
+
 .post {
   width: 100%;
   border-radius: 11px;
