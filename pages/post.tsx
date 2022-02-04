@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Col, Container, Row, Image, Button } from "react-bootstrap";
+import { Col, Container, Row, Image, Button, Spinner } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
 const Post = ({ post, deletePost, error, Like, loading, likePost }: any) => {
@@ -30,7 +30,7 @@ const Post = ({ post, deletePost, error, Like, loading, likePost }: any) => {
         )}
       </div>
 
-      {post &&
+      {post ? (
         post?.map((post: any, i: any) => (
           <div className="post" key={i}>
             <div className="postWrapper">
@@ -111,7 +111,16 @@ const Post = ({ post, deletePost, error, Like, loading, likePost }: any) => {
               </div>
             </div>
           </div>
-        ))}
+        ))
+      ) : (
+        <Row>
+          <Col className="d-flex justify-content-center mt-5">
+            <Spinner animation="grow" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          </Col>
+        </Row>
+      )}
     </>
   );
 };
