@@ -137,8 +137,8 @@ const profile = () => {
           </div>
         </>
       ) : (
-        <Row>
-          <Col className="d-flex justify-content-center mt-5">
+        <Row className="spintop">
+          <Col className="d-flex justify-content-center ">
             <Spinner animation="grow" role="status">
               <span className="visually-hidden">Loading...</span>
             </Spinner>

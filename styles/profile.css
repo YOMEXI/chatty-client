@@ -31,7 +31,6 @@
 }
 
 .main-container .profile-details {
-  width: 100%;
   display: block;
 }
 
@@ -55,6 +54,10 @@
   width: 80%;
 }
 
+.spintop {
+  margin-top: 7rem !important;
+}
+
 @media (max-width: 991px) {
   /* header  */
 
@@ -74,6 +77,11 @@
 }
 
 @media screen and (max-device-width: 500px) {
+  .profile-card {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
   .image-container img {
     width: 80vw;
     height: 17rem;
@@ -83,19 +91,11 @@
     margin-top: 6rem;
   }
 
-  .followTab {
-    margin-bottom: -3rem;
-  }
   .profile-card {
     gap: 0rem;
   }
 
   .main-container {
     height: 10rem;
-  }
-
-  .main-container .profile-details {
-    width: 90vw;
-    display: block;
   }
 }
