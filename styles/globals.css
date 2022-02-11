@@ -41,6 +41,10 @@ a {
   box-sizing: border-box;
 }
 
+i {
+  font-size: 0.6rem;
+}
+
 .error {
   color: red !important;
 }

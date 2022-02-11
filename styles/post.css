@@ -1,3 +1,7 @@
+.auth {
+  margin-top: 3rem !important;
+}
+
 .removeA {
   text-decoration: none !important;
   list-style: none !important;
@@ -175,6 +179,18 @@
     width: 100%;
     border-radius: 11px;
     margin: 30px 0;
+  }
+
+  .postBottomLeft {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+  }
+  .postBottomRight {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1rem;
   }
 }
 

@@ -39,7 +39,7 @@ const Login = () => {
   return (
     <>
       <Container>
-        <Row className="justify-content-center mt-4">
+        <Row className="justify-content-center auth">
           <Col lg={4} md={8} xs={10} sm={10}>
             <Row className="justify-content-center mt-4 text-center">
               {success && successMsg(success)}
