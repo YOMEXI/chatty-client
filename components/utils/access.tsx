@@ -36,7 +36,11 @@ const pageAuth = async () => {
 
   if (!checkPage) {
     try {
-      const { data } = await axios.get(`/api/user/me`);
+      const { data } = await axios.get(`/api/user/me`, {
+        withCredentials: true,
+        headers: { crossDomain: true, "Content-Type": "application/json" },
+      });
+
       if (data) {
         return;
       }
